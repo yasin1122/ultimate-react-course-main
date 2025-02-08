@@ -143,7 +143,7 @@ function getBook(id) {
   return data.find(d => d.id === id)
 }
 
-// destructuring
+// Destructuring
 
 const book = getBook(1)
 const { title, author, pages: bookPages, publicationDate } = book
@@ -161,3 +161,6 @@ const msg = `The publication year is ${
   updatedBook.publicationDate.split('-')[0]
 }.`
 console.log(msg)
+
+// Ternary Operator
+console.log(`10 is an ${10 % 2 === 0 ? 'even' : 'odd'} number.`)
