@@ -156,10 +156,11 @@ console.log(genre1, otherGenres)
 // Spread Operator (Add and Update Existing Properties)
 const updatedBook = { ...book, moviePublicationDate: '2001-12-19', pages: 1222 }
 
+// Arrow Functions
+const getYear = str => str.split('-')[0]
+
 // Template Literals
-const msg = `The publication year is ${
-  updatedBook.publicationDate.split('-')[0]
-}.`
+const msg = `The publication year is ${getYear(publicationDate)}.`
 console.log(msg)
 
 // Ternary Operator
