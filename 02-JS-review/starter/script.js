@@ -155,3 +155,9 @@ console.log(genre1, otherGenres)
 
 // Spread Operator (Add and Update Existing Properties)
 const updatedBook = { ...book, moviePublicationDate: '2001-12-19', pages: 1222 }
+
+// Template Literals
+const msg = `The publication year is ${
+  updatedBook.publicationDate.split('-')[0]
+}.`
+console.log(msg)
