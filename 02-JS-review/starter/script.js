@@ -142,3 +142,16 @@ function getBooks() {
 function getBook(id) {
   return data.find(d => d.id === id)
 }
+
+// destructuring
+
+const book = getBook(1)
+const { title, author, pages: bookPages, publicationDate } = book
+console.log(title, author, bookPages, publicationDate)
+
+// Rest Operator
+const [genre1, ...otherGenres] = book.genres
+console.log(genre1, otherGenres)
+
+// Spread Operator (Add and Update Existing Properties)
+const updatedBook = { ...book, moviePublicationDate: '2001-12-19', pages: 1222 }
