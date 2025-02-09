@@ -174,6 +174,6 @@ console.log(true || 'Some string') // true
 console.log(false || 'Some string') // Some string
 
 // Falsy values includes 0 which can be a problem with ||
-// Instead we can use ??
+// Instead we can use ?? Nullish Coalescing Operator
 console.log(0 || 'Some string') // Some string (Not what we want)
 console.log(0 ?? 'Some string') // 0 (What we expect)
