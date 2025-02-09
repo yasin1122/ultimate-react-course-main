@@ -165,3 +165,15 @@ console.log(msg)
 
 // Ternary Operator
 console.log(`10 is an ${10 % 2 === 0 ? 'even' : 'odd'} number.`)
+
+// Short Circuiting
+console.log(true && 'Some string') // Some string
+console.log(false && 'Some string') // false
+
+console.log(true || 'Some string') // true
+console.log(false || 'Some string') // Some string
+
+// Falsy values includes 0 which can be a problem with ||
+// Instead we can use ??
+console.log(0 || 'Some string') // Some string (Not what we want)
+console.log(0 ?? 'Some string') // 0 (What we expect)
