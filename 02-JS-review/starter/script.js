@@ -181,3 +181,11 @@ console.log(0 ?? 'Some string') // 0 (What we expect)
 // Optional Chaining
 const somebody = { name: 'Joe', age: 33 }
 console.log(somebody?.email ?? 'No email')
+
+// Array map() method
+const books = getBooks()
+const authorTitle = books.map(book => ({
+  title: book.title,
+  author: book.author
+}))
+console.log(authorTitle)
