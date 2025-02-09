@@ -177,3 +177,7 @@ console.log(false || 'Some string') // Some string
 // Instead we can use ?? Nullish Coalescing Operator
 console.log(0 || 'Some string') // Some string (Not what we want)
 console.log(0 ?? 'Some string') // 0 (What we expect)
+
+// Optional Chaining
+const somebody = { name: 'Joe', age: 33 }
+console.log(somebody?.email ?? 'No email')
