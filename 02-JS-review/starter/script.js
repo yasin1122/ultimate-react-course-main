@@ -188,4 +188,7 @@ const authorTitle = books.map(book => ({
   title: book.title,
   author: book.author
 }))
-console.log(authorTitle)
+
+// Array filter() method
+const longBooks = books.filter(book => book.pages > 500)
+console.log(longBooks.length)
