@@ -190,5 +190,11 @@ const authorTitle = books.map(book => ({
 }))
 
 // Array filter() method
-const longBooks = books.filter(book => book.pages > 500)
-console.log(longBooks.length)
+const longBooks = books
+  .filter(book => book.pages > 500)
+  .map(book => book.reviews.goodreads.reviewsCount)
+console.log(longBooks)
+
+// Array reduce() method
+const totalPages = books.reduce((total, book) => total + book.pages, 0)
+console.log(totalPages)
