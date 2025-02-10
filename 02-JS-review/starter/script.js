@@ -205,3 +205,5 @@ console.log(totalPages)
 const unsortedArr = [4, 1, 12, 5, 40]
 const sortedArr = unsortedArr.slice().sort((a, b) => a - b)
 console.log(sortedArr)
+
+// Working with Immutable Arrays
