@@ -198,3 +198,10 @@ console.log(longBooks)
 // Array reduce() method
 const totalPages = books.reduce((total, book) => total + book.pages, 0)
 console.log(totalPages)
+
+// Array sort() method (mutates OG array unlike other Array methods)
+// sort() mutates OG array unlike other Array methods
+// Use slice() to make a copy of the Array first
+const unsortedArr = [4, 1, 12, 5, 40]
+const sortedArr = unsortedArr.slice().sort((a, b) => a - b)
+console.log(sortedArr)
