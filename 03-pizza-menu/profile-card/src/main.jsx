@@ -16,20 +16,18 @@ function App() {
 
 function Avatar() {
   return (
-    <div>
-      <img
-        className='avatar'
-        src='src/assets/Resume Photo.jpg'
-        alt='resume-photo'
-      />
-    </div>
+    <img
+      className='avatar'
+      src='src/assets/Resume Photo.jpg'
+      alt='resume-photo'
+    />
   )
 }
 
 function Intro() {
   return (
     <div>
-      <h2>Yasin Cakal</h2>
+      <h1>Yasin Cakal</h1>
       <p>
         Highly motivated Full Stack Developer with strong technical expertise
         and a passion for programming. Published author of 15 beginner-friendly
@@ -47,14 +45,22 @@ function SkillList() {
       <Skill
         name='HTML+CSS'
         emoji='👍'
+        color='orangered'
       />
       <Skill
         name='JavaScript'
         emoji='💪'
+        color='yellow'
+      />
+      <Skill
+        name='Node.JS'
+        emoji='👍'
+        color='green'
       />
       <Skill
         name='React'
         emoji='👶'
+        color='blue'
       />
     </div>
   )
@@ -62,8 +68,10 @@ function SkillList() {
 
 function Skill(props) {
   return (
-    <div className='skill'>
-      <p>{props.name}</p>
+    <div
+      className='skill'
+      style={{ backgroundColor: props.color }}>
+      <span>{props.name}</span>
       <span>{props.emoji}</span>
     </div>
   )
