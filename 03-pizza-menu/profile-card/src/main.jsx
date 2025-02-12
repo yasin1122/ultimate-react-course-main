@@ -75,8 +75,7 @@ function SkillList() {
   )
 }
 
-function Skill({ skillObj }) {
-  const { name, level, color } = skillObj
+function Skill({ skillObj: { name, level, color } }) {
   let emoji = '?'
   if (level === 'beginner') emoji = '👶'
   else if (level === 'intermediate') emoji = '👍'
