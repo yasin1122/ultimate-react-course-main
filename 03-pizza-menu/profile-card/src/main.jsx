@@ -39,40 +39,55 @@ function Intro() {
   )
 }
 
+const skills = [
+  {
+    name: 'HTML+CSS',
+    level: 'intermediate',
+    color: 'orangered'
+  },
+  {
+    name: 'JavaScript',
+    level: 'advanced',
+    color: 'yellow'
+  },
+  {
+    name: 'Node.JS',
+    level: 'intermediate',
+    color: 'green'
+  },
+  {
+    name: 'React',
+    level: 'beginner',
+    color: 'blue'
+  }
+]
+
 function SkillList() {
   return (
     <div className='skill-list'>
-      <Skill
-        name='HTML+CSS'
-        emoji='👍'
-        color='orangered'
-      />
-      <Skill
-        name='JavaScript'
-        emoji='💪'
-        color='yellow'
-      />
-      <Skill
-        name='Node.JS'
-        emoji='👍'
-        color='green'
-      />
-      <Skill
-        name='React'
-        emoji='👶'
-        color='blue'
-      />
+      {skills.map(skill => (
+        <Skill
+          skillObj={skill}
+          key={skill.name}
+        />
+      ))}
     </div>
   )
 }
 
-function Skill(props) {
+function Skill({ skillObj }) {
+  const { name, level, color } = skillObj
+  let emoji = '?'
+  if (level === 'beginner') emoji = '👶'
+  else if (level === 'intermediate') emoji = '👍'
+  else if (level === 'advanced') emoji = '💪'
+
   return (
     <div
       className='skill'
-      style={{ backgroundColor: props.color }}>
-      <span>{props.name}</span>
-      <span>{props.emoji}</span>
+      style={{ backgroundColor: color }}>
+      <span>{name}</span>
+      <span>{emoji}</span>
     </div>
   )
 }
