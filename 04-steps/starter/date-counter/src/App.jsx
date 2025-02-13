@@ -8,6 +8,11 @@ function App() {
   const date = new Date()
   date.setDate(date.getDate() + count)
 
+  const handleReset = () => {
+    setStep(0)
+    setCount(0)
+  }
+
   return (
     <>
       <div>
@@ -20,8 +25,17 @@ function App() {
         <span> Count: {count} </span>
         <button onClick={() => setCount(count => count + step)}>+</button>
       </div>
-      <p>{date.toDateString()}</p>
-      {/* I want to display the todays date here in this format: Thu Jul 01 2022 */}
+      <p>
+        <span>
+          {count === 0
+            ? 'Today is '
+            : count > 0
+            ? `${count} days from today is `
+            : `${Math.abs(count)} days ago was `}
+        </span>
+        <span>{date.toDateString()}</span>
+      </p>
+      <button onClick={() => handleReset()}>Reset</button>
     </>
   )
 }
