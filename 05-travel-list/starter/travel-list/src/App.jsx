@@ -44,6 +44,7 @@ function Form() {
       <h3>What do you need for your 😍 trip?</h3>
       <select
         value={quantity}
+        // e.target refers to the current html element
         onChange={e => setQuantity(Number(e.target.value))}>
         {Array.from({ length: 20 }, (_, i) => i + 1).map(num => (
           <option
