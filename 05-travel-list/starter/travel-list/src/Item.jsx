@@ -1,4 +1,4 @@
-export function Item({ item, onDeleteItem, onToggleItem }) {
+export default function Item({ item, onDeleteItem, onToggleItem }) {
   return (
     // Ensure that the value passed to style is an object (even if empty)
     <li>
