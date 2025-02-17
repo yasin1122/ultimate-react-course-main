@@ -44,6 +44,7 @@ export default function App() {
               bgColor={'#7950f2'}
               textColor={'#fff'}
               onClick={handlePrevious}>
+              {/* Passing down children prop */}
               <span>👈</span> Previous
             </Button>
             <Button
@@ -64,6 +65,7 @@ function Button({ textColor, bgColor, onClick, children }) {
     <button
       style={{ backgroundColor: bgColor, color: textColor }}
       onClick={onClick}>
+      {/* Receiving the children prop */}
       {children}
     </button>
   )
