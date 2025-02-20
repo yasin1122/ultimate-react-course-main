@@ -30,13 +30,26 @@ function ShoppingList() {
 }
 
 function ShoppingItem({ name, quantity }) {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(quantity)
+
+  function increment() {
+    setCount(prev => prev + 1)
+  }
+
+  function decrement() {
+    setCount(prev => (prev > 0 ? prev - 1 : 0))
+  }
 
   return (
     <li>
-      {name} {quantity}
+      {name}
+      <Button onClick={increment}>+</Button>
+      {count}
+      <Button onClick={decrement}>-</Button>
     </li>
   )
 }
 
-function Button() {}
+function Button({ children, onClick }) {
+  return <button onClick={onClick}>{children}</button>
+}
