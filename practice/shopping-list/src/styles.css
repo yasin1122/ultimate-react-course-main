@@ -1,0 +1,131 @@
+/* 1. Global Styles */
+/* This sets the basic styling for the body of the app. */
+body {
+  font-family: Arial, sans-serif; /* Uses a simple font for better readability */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  background-color: #f4f4f9; /* Light background color for the page */
+  color: #333; /* Dark text color for better contrast */
+  display: flex; /* Flexbox layout for centering content */
+  justify-content: center; /* Horizontally center the app */
+  align-items: center; /* Vertically center the app */
+  height: 100vh; /* Full viewport height */
+  box-sizing: border-box; /* Ensures padding and borders are included in the element's width/height */
+}
+
+/* 2. Main App Title (h1) */
+h1 {
+  text-align: center; /* Center the title text */
+  font-size: 2.5rem; /* Larger font size for emphasis */
+  color: #4caf50; /* Green color for the title */
+  margin-bottom: 20px; /* Adds space below the title */
+}
+
+/* 3. Shopping List Container */
+ul {
+  list-style-type: none; /* Removes default list bullets */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+  width: 100%; /* Makes the list take up the full width */
+  max-width: 600px; /* Limits the list width to 600px */
+}
+
+/* 4. Individual Shopping Item (li) */
+li {
+  display: flex; /* Uses Flexbox to arrange the item horizontally */
+  justify-content: space-between; /* Space out the elements (name, buttons, quantity) */
+  align-items: center; /* Vertically center the elements */
+  background-color: #fff; /* White background for each item */
+  border: 1px solid #ddd; /* Light gray border around each item */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  padding: 10px; /* Adds space inside each item */
+  margin-bottom: 10px; /* Adds space between each list item */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for a lifted effect */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+li:hover {
+  background-color: #f1f1f1; /* Change background when hovering over the item */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* 5. Buttons inside the ShoppingItem */
+button {
+  padding: 8px 12px; /* Adds space inside the button */
+  background-color: #4caf50; /* Green background for the button */
+  color: white; /* White text on the button */
+  border: none; /* Removes the default border */
+  border-radius: 4px; /* Rounded corners for the button */
+  cursor: pointer; /* Changes cursor to pointer when hovering over the button */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+button:disabled {
+  background-color: #ddd; /* Light gray when the button is disabled */
+  cursor: not-allowed; /* Changes the cursor to a not-allowed symbol */
+}
+
+/* 6. Clear Button Styling */
+button[type='submit'] {
+  background-color: #ff5733; /* Red background for the "Add Item" button */
+}
+
+button[type='submit']:hover {
+  background-color: #e64a19; /* Darker red on hover for submit button */
+}
+
+/* 7. Form Styling */
+form {
+  display: flex; /* Flexbox layout for the form */
+  gap: 10px; /* Space between form elements */
+  margin-bottom: 20px; /* Adds space below the form */
+}
+
+input {
+  padding: 10px; /* Adds padding inside the input fields */
+  border-radius: 4px; /* Rounded corners for inputs */
+  border: 1px solid #ddd; /* Light border for the input fields */
+  font-size: 1rem; /* Adjusts the font size */
+  width: 100%; /* Makes input fields take up all available space */
+  max-width: 300px; /* Limits input width to 300px */
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Removes up/down arrows in the number input on Firefox */
+}
+
+input:focus {
+  outline: none; /* Removes default focus outline */
+  border-color: #4caf50; /* Green border when the input is focused */
+}
+
+/* 8. Add Item Form Layout */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+form input {
+  width: auto; /* Makes the input field size more natural */
+  flex: 1; /* Ensures input fields stretch to fill available space */
+}
+
+/* 9. Button in the Form */
+button[type='submit'] {
+  background-color: #4caf50; /* Green button for submitting the form */
+  color: white; /* White text on button */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type='submit']:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
