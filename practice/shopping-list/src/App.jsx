@@ -1,5 +1,7 @@
+import { useState } from 'react'
+
 const demoList = [
-  { name: 'bread', quantity: 2 },
+  { name: 'bread', quantity: 3 },
   { name: 'eggs', quantity: 12 },
   { name: 'salmon', quantity: 1 }
 ]
@@ -28,9 +30,13 @@ function ShoppingList() {
 }
 
 function ShoppingItem({ name, quantity }) {
+  const [count, setCount] = useState(0)
+
   return (
     <li>
       {name} {quantity}
     </li>
   )
 }
+
+function Button() {}
