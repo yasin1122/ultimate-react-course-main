@@ -51,9 +51,46 @@ function MiniForm({ text, setText }) {
 }
 
 function Todo() {
+  const [todos, setTodos] = useState([])
+  const [input, setInput] = useState('')
+
+  function handleSubmit() {
+    if (input.trim !== '') {
+      setTodos([...todos, input])
+      setInput('')
+    }
+  }
+
+  function handleDelete(indexToDelete) {
+    const deletedTodos = setTodos(
+      todos.filter((_, index) => index !== indexToDelete)
+    )
+  }
+
   return (
     <>
       <h1>Todo List</h1>
+      <input
+        type='text'
+        value={input}
+        onChange={e => setInput(e.target.value)}
+      />
+      <button onClick={handleSubmit}>Add Todo</button>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo}{' '}
+            <DeleteButton
+              index={index}
+              onDelete={handleDelete}
+            />
+          </li>
+        ))}
+      </ul>
     </>
   )
+}
+
+function DeleteButton({ index, onDelete }) {
+  return <button onClick={() => onDelete(index)}>Delete</button>
 }
