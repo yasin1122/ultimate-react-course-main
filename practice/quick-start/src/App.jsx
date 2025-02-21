@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Practice } from './Practice'
 
 export default function App() {
   const [linkedCount, setLinkedCount] = useState(0)
@@ -20,6 +21,7 @@ export default function App() {
       />
       <Profile />
       <ShoppingList />
+      <Practice />
     </div>
   )
 }
