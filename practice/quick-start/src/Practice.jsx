@@ -24,6 +24,7 @@ export function Practice() {
         count={count}
         onClick={handleClick}
       />
+      <Todo />
     </>
   )
 }
@@ -46,5 +47,13 @@ function MiniForm({ text, setText }) {
         onChange={e => setText(e.target.value)}
       />
     </form>
+  )
+}
+
+function Todo() {
+  return (
+    <>
+      <h1>Todo List</h1>
+    </>
   )
 }
