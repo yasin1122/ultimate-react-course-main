@@ -35,6 +35,14 @@ export default function App() {
   )
 }
 
-function TextExpander() {
+function TextExpander({
+  collapsedNumWords,
+  collapseButtonText,
+  expandButtonText,
+  buttonColor,
+  buttonInline,
+  className,
+  children
+}) {
   return <div>TODO</div>
 }
