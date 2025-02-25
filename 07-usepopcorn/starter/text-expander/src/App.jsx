@@ -37,8 +37,8 @@ export default function App() {
 
 function TextExpander({
   collapsedNumWords,
-  collapseButtonText,
   expandButtonText,
+  collapseButtonText,
   buttonColor,
   buttonInline,
   className,
