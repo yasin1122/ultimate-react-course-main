@@ -44,5 +44,5 @@ function TextExpander({
   className,
   children
 }) {
-  return <div>TODO</div>
+  return <div>{children}</div>
 }
