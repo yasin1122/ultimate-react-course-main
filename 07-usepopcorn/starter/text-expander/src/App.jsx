@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './index.css'
 
 export default function App() {
@@ -36,13 +37,24 @@ export default function App() {
 }
 
 function TextExpander({
-  collapsedNumWords,
-  expandButtonText,
-  collapseButtonText,
+  collapsedNumWords = 20,
+  expandButtonText = 'Show more',
+  collapseButtonText = 'Show less',
   buttonColor,
-  buttonInline,
+  expanded = false,
   className,
   children
 }) {
-  return <div>{children}</div>
+  const [isExpanded, setIsExpanded] = useState(expanded)
+
+  const displayText = isExpanded ? children : 'test'
+
+  return (
+    <div className={className}>
+      <span>{displayText}</span>
+      <button onClick={() => setIsExpanded(exp => !exp)}>
+        {isExpanded ? collapseButtonText : expandButtonText}
+      </button>
+    </div>
+  )
 }
