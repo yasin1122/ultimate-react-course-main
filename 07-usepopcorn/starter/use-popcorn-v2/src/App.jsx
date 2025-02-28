@@ -59,7 +59,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
-  const query = 'interstellar'
+  const tempQuery = 'interstellar'
 
   // useEffect(function () {
   //   fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=${query}`)
@@ -72,7 +72,7 @@ export default function App() {
       try {
         setIsLoading(true)
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`
+          `http://www.omdbapi.com/?apikey=${KEY}&s=${tempQuery}`
         )
 
         if (!res.ok)
