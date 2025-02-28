@@ -54,11 +54,11 @@ const average = arr =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0)
 
 export default function App() {
+  const [query, setQuery] = useState('')
   const [movies, setMovies] = useState([])
   const [watched, setWatched] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
-
   const tempQuery = 'interstellar'
 
   // useEffect(function () {
@@ -82,7 +82,6 @@ export default function App() {
         if (data.Response === 'False') throw new Error('Movie not found')
         setMovies(data.Search)
       } catch (err) {
-        console.log(err.message)
         setError(err.message)
       } finally {
         setIsLoading(false)
@@ -94,7 +93,10 @@ export default function App() {
   return (
     <>
       <NavBar>
-        <Search />
+        <Search
+          query={query}
+          setQuery={setQuery}
+        />
         <NumResults movies={movies} />
       </NavBar>
       <Main>
@@ -143,9 +145,7 @@ function Logo() {
   )
 }
 
-function Search() {
-  const [query, setQuery] = useState('')
-
+function Search({ query, setQuery }) {
   return (
     <input
       className='search'
